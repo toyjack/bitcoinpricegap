@@ -1,0 +1,17 @@
+{
+  "name": "bcob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "date-utils": "^1.2.21",
+    "dotenv": "^4.0.0",
+    "sendgrid": "^5.1.1"
+  }
+}
