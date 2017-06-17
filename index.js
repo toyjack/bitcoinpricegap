@@ -1,6 +1,9 @@
+let path=require('path')
+const envPath=path.normalize(__dirname + '/.env')
 require('date-utils')
 let axios = require('axios')
 let dotenv = require('dotenv')
+dotenv.config({path: envPath})
 dotenv.load()
 let sg = require('sendgrid')(process.env.SENDGRID_API_KEY)
 let helper = require('sendgrid').mail;

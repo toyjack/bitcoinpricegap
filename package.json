@@ -1,7 +1,7 @@
 {
   "name": "bcob",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "an observer for price gap between Huobi and Bitflyer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
