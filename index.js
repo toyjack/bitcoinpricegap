@@ -11,7 +11,7 @@ let helper = require('sendgrid').mail;
 
 const from = process.env.SEND_FROM
 const tos = process.env.SEND_TO.split(',')
-const huobiAPI = 'https://api.btctrade.com/api/ticker?coin=btc'
+const huobiAPI = 'http://api.huobi.com/staticmarket/ticker_btc_json.js'
 const bitflyerAPI = 'https://bitflyer.jp/api/echo/price'
 
 function sendMail(to,contentBody) {
@@ -50,7 +50,7 @@ function getRate() {
 
 axios.all([getHuobi(), getBitflyer(), getRate()])
     .then(axios.spread(function (huobi, bitflyer, rate) {
-        let curHuobi = huobi.data.sell
+        let curHuobi = huobi.data.ticker.sell
         let curRate = parseFloat(rate.data.result.JPY.BOC.se_sell)
         let curBitflyer = parseInt(bitflyer.data.ask / 100 * curRate)
         let curPriceGap = curHuobi - curBitflyer
